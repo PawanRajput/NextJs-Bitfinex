@@ -26,7 +26,8 @@ const Book = () => {
             console.log(data)
             if (data.event === 'subscribed') {
                 channels[data.chanId] = data.channel;
-            } else {
+            } 
+            else {
                 if (data.shift) {
                     let chanId = data.shift();
                     if (data !== "hb") {
@@ -34,7 +35,7 @@ const Book = () => {
                         if ((ch === 'book') && (data[0][2] < 0)) {
                             ch = 'booksell';
                         }
-                        let chData = channel
+                        let chData = ch == 'book' ? book : bookSell
 
                         if (chData.length > 20) {
                             chData.shift();
@@ -47,9 +48,7 @@ const Book = () => {
                         setChannel(chData);
                     }
                 }
-
             }
-
         }
     },[])
 
@@ -74,7 +73,7 @@ const Book = () => {
 
     const tradeBookSell = () => {
         let table = [];
-        book.forEach(elem => {
+        bookSell.forEach(elem => {
             let PRICE = elem[0][0];
             let COUNT = elem[0][1];
             let AMOUNT = elem[0][2];
