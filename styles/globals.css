@@ -14,3 +14,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.left {
+  float: left;
+}
+.title {
+  font-size: 14px;
+}
+
+.tbl {
+  min-width: 300px;
+  background-color: #5083a3;
+  color: white;
+  margin: 5px;
+}
+
+.header {
+  font-weight: bold;
+  color: lightgrey;
+}
